@@ -23,7 +23,7 @@ function ProductDiagnostics({
 
   return (
     <section className="product-modal__section">
-      <h3>Panel técnico</h3>
+      <h3>Detalles del producto</h3>
       <ul className="detail-list">
         <li>
           <span>Precio</span>
@@ -103,18 +103,6 @@ export default function ProductDetailsModal({
         </header>
 
         <div className="product-modal__grid">
-          <section className="product-modal__section">
-            <h3>Por qué entra en la charla</h3>
-            <p>{product.highlight}</p>
-            <div className="product-card__tags">
-              {product.tags.map((tag) => (
-                <span key={tag} className="chip">
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          </section>
-
           <ProductDiagnostics product={product} shouldCrash={shouldCrashDiagnostics} />
         </div>
 

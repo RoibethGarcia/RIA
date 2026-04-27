@@ -49,7 +49,7 @@ const productSeeds: Omit<Product, "id">[] = [
   {
     title: "Focus Lamp",
     description: "Lámpara regulable con temperatura adaptable para escritorios de alto rendimiento.",
-    highlight: "Perfecta para comparar render normal vs lista virtualizada.",
+    highlight: "Iluminación precisa para sesiones largas de trabajo.",
     price: 94,
     rating: 4.4,
     stock: 24,

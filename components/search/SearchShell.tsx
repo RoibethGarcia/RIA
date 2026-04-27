@@ -23,7 +23,6 @@ export default function SearchShell({
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<CategorySlug>("all");
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
-  const [virtualized, setVirtualized] = useState(false);
   const [displayedProducts, setDisplayedProducts] = useState(initialProducts);
   const [isTransitionPending, startTransition] = useTransition();
 
@@ -124,17 +123,8 @@ export default function SearchShell({
       <CategoryTabs.Root value={category} onValueChange={setCategory}>
         <div className="tabs-header">
           <div>
-            <p className="eyebrow">Slide 4</p>
             <h2>Compound components para categorías</h2>
           </div>
-          <label className="toggle-card">
-            <span>Virtualizar lista</span>
-            <input
-              checked={virtualized}
-              type="checkbox"
-              onChange={(event) => setVirtualized(event.target.checked)}
-            />
-          </label>
         </div>
 
         <CategoryTabs.List>
@@ -175,15 +165,11 @@ export default function SearchShell({
 
       <section className="results-header">
         <div>
-          <p className="eyebrow">Slides 6 a 11</p>
-          <h2>Lista memoizada y lista virtualizada sobre el mismo dominio</h2>
+          <h2>Productos encontrados</h2>
         </div>
         <div className="results-header__meta">
           <span className={`status-pill ${status === "loading" ? "is-active" : ""}`}>
             {status === "loading" ? "Loading" : "Stable"}
-          </span>
-          <span className={`status-pill ${virtualized ? "is-active" : ""}`}>
-            {virtualized ? "Virtualizada" : "Render completo"}
           </span>
         </div>
       </section>
@@ -192,7 +178,6 @@ export default function SearchShell({
         products={displayedProducts}
         selectedProductId={selectedProductId}
         onSelectProduct={handleSelectProduct}
-        virtualized={virtualized}
       />
 
       {selectedProduct ? (

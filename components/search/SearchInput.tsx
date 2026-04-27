@@ -21,7 +21,6 @@ export default function SearchInput({
     <section className="search-card">
       <div className="search-card__header">
         <div>
-          <p className="eyebrow">Slide 5 + 10</p>
           <h2>Búsqueda asíncrona con prioridad correcta</h2>
         </div>
         <div className="status-row" aria-live="polite">
